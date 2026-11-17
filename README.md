@@ -10,6 +10,19 @@ A free [Mac App Store](https://apps.apple.com) release by [Prostec Labs](https:/
 
 ---
 
+## OpenCore / Hackintosh: kext build
+
+OpenCore injects kernel extensions and cannot load a DriverKit extension, so
+this repository also builds TetherKit as a kext. It needs no Apple Developer
+account, entitlements, signing or SIP changes:
+
+```sh
+cd TetherKitKext && make
+```
+
+Then copy `TetherKitKext/build/TetherKit.kext` to `EFI/OC/Kexts/` and add it to
+`config.plist`. Full instructions: [TetherKitKext/README.md](TetherKitKext/README.md).
+
 ## After Cloning
 
 Run these three commands before anything else:
